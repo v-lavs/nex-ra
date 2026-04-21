@@ -49,6 +49,10 @@
 
   &__img {
     width: 100%;
+    img{
+      display: block;
+      width: 100%;
+    }
   }
 
   &__contacts {

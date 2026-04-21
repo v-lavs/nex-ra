@@ -3,32 +3,28 @@
 
 .section-banner {
   display: flex;
-
+  position: relative;
   min-height: 728px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: #FFFFFF;
   padding-bottom: 37px;
-
+  img{
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+  }
   .container {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     flex-grow: 1;
-    position: relative;
-
-    &:before {
-      position: absolute;
-      content:  url(../assets/img/nexentra-text.svg);
-      display: block;
-      left: 0;
-      right: 0;
-      top: 0;
-      width: 100%;
-      height: auto;
-      z-index: 1;
-    }
   }
 
   &__title {

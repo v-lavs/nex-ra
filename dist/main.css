@@ -585,6 +585,11 @@ input[type=text] {
   width: 100%;
 }
 
+.footer__img img {
+  display: block;
+  width: 100%;
+}
+
 .footer__contacts {
   display: flex;
   justify-content: space-between;
@@ -621,6 +626,7 @@ input[type=text] {
 
 .section-banner {
   display: flex;
+  position: relative;
   min-height: 728px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -629,17 +635,8 @@ input[type=text] {
   padding-bottom: 37px;
 }
 
-.section-banner .container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  flex-grow: 1;
-  position: relative;
-}
-
-.section-banner .container:before {
+.section-banner img {
   position: absolute;
-  content: url(../assets/img/nexentra-text.svg);
   display: block;
   left: 0;
   right: 0;
@@ -647,6 +644,13 @@ input[type=text] {
   width: 100%;
   height: auto;
   z-index: 1;
+}
+
+.section-banner .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  flex-grow: 1;
 }
 
 .section-banner__title {
