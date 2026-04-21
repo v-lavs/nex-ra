@@ -1,0 +1,13 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+.section-philosophy {
+  border-radius: 0 0 30px 30px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  .section__text {
+    margin-bottom: 67px;
+  }
+}

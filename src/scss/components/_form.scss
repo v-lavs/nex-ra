@@ -1,0 +1,69 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  margin-right: 12px;
+  border: 1px solid #D3EAF3;
+  border-radius: 30px;
+  background: transparent;
+  height: 48px;
+  line-height: 1;
+}
+
+.form {
+  max-width: 510px;
+  width: 100%;
+  color: #B1DEEE;
+  &__group {
+    position: relative;
+    flex-grow: 1;
+    margin-right: 12px;
+  }
+
+  label {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    white-space: nowrap;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    color: rgba(244, 247, 255, 0.2);
+    z-index: 1;
+
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+}
+
+.form__group input:not(:placeholder-shown) ~ label,
+.form__group input:focus ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: rgba(244, 247, 255, 0.8);
+}
+@include mixins.respond-to(variables.$xl) {
+
+}
+
+@include mixins.respond-to(variables.$md) {
+
+}
+
+@include mixins.respond-to(variables.$sm) {
+
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+}
+
+@include mixins.respond-to(variables.$xxs) {
+
+}

@@ -1,0 +1,13 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.card {
+  background: rgba(211, 234, 243, 0.29);
+  border: 1px solid rgba(211, 234, 243, 1);
+  color: #223649;
+}
+
+
+@include mixins.respond-to(variables.$xs) {
+
+}

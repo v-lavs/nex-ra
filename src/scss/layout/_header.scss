@@ -1,0 +1,133 @@
+//@use "../utils/mixins";
+//@use "../utils/variables";
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 38px 0;
+  z-index: 2;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    max-width: 121px;
+    display: inline-block;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.btn_burger {
+  display: none;
+
+  border: none;
+  background-color: transparent;
+  height: 27px;
+  margin-left: 24px;
+
+  .line {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.btn_close {
+  display: none;
+
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #000;
+    left: 2px;
+    top: 11px;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: .3;
+  z-index: 500;
+}
+
+
+//@include mixins.respond-to(variables.$md) {
+//  .header {
+//
+//    .container {
+//
+//    }
+//
+//    &__nav {
+//      position: absolute;
+//      left: 0;
+//      right: 0;
+//      top: -30px;
+//      transform: translateY(-100%);
+//      transition: transform .35s;
+//      background-color: #FFFFFF;
+//      padding: 100px 25px;
+//
+//      height: calc(100vh + 30px);
+//      height: calc(100svh + 30px);
+//      overflow-y: auto;
+//      -webkit-overflow-scrolling: touch;
+//
+//      &.open {
+//        transform: translateY(0);
+//      }
+//
+//      .btn_close {
+//        display: block;
+//      }
+//    }
+//  }
+//  .btn_burger {
+//    display: block;
+//  }
+//
+//}
+//@include mixins.respond-to(variables.$xs) {
+//
+//}
+//@include mixins.respond-to(variables.$xxs) {
+//
+//}

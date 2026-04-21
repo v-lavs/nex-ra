@@ -1,0 +1,132 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  transition: .35s;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  padding-top: 19px;
+  padding-bottom: 19px;
+  border: 1px solid;
+
+  &_main {
+    color: #223649;
+    background-color: #D3EAF3;
+    border-color: #11728F;
+    border-radius: 30px;
+    padding: 14px 32px;
+
+    &:hover,
+    &:focus {
+      color: #D3EAF3;
+      background-color: #223649;
+    }
+  }
+
+  &_secondary {
+    color: #717171;
+    background-color: #FFFFFF;
+    border-color: #223649;
+    border-radius: 45px;
+    padding-left: 48px;
+    padding-right: 23px;
+    font-size: 16px;
+    position: relative;
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #223649;
+      left: 23px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    &:hover,
+    &:focus {
+      color: #11728F;
+      border-color: #11728F;
+
+      &:before {
+        background-color: #11728F;
+      }
+    }
+
+    &:active {
+      color: #223649;
+      border-color: #D3EAF3;
+      background-color: rgba(211, 234, 243, .29);
+    }
+  }
+
+  &_dark {
+    color: #FFFFFF;
+    border-color: #B1DEEE;
+    background-color: #223649;
+    border-radius: 40px;
+    padding-left: 38px;
+    padding-right: 38px;
+
+    &:hover,
+    &:focus {
+      color: #223649;
+      background-color: #D3EAF3;
+      border-color: #6D8AA3;
+    }
+  }
+}
+
+.btn-to-top {
+  position: fixed;
+  bottom: 48px;
+  //right: calc((100vw - 1440px)/ 2 + 50px);
+  right: 50px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  transform: translateY(20px);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #D3EAF3;
+  border: none;
+  cursor: pointer;
+  &:before{
+    position: absolute;
+    content: url('../assets/img/to-top.svg');
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+}
+
+.btn-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@include mixins.respond-to(variables.$sm) {
+
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+}

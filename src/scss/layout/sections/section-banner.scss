@@ -1,0 +1,70 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+.section-banner {
+  display: flex;
+
+  min-height: 728px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
+  padding-bottom: 37px;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    flex-grow: 1;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content:  url(../assets/img/nexentra-text.svg);
+      display: block;
+      left: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: auto;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  &__footer {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.7;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@include mixins.respond-to(variables.$xl) {
+
+}
+
+@include mixins.respond-to(variables.$md) {
+
+}
+
+@include mixins.respond-to(variables.$sm) {
+
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+}
+
+@include mixins.respond-to(variables.$xxs) {
+
+}
+
+@media only screen and (max-width: 360px) {
+
+}

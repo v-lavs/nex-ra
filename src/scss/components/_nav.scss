@@ -1,0 +1,46 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.menu {
+  display: flex;
+
+  &__item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    margin-left: 13px;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .05);
+  }
+
+  &__link {
+    border: 1px solid #E2EEF0;
+    border-radius: 50px;
+    display: inline-block;
+    transition: .35s;
+  }
+
+}
+
+.header_white {
+  .menu__item a {
+    color: #FFFFFF;
+    background: linear-gradient(126.02deg, rgba(249, 244, 241, 0.4) -32.43%, rgba(255, 255, 255, 0.08) 146.07%);
+    backdrop-filter: blur(20px);
+    padding: 11px 22px;
+
+    &:hover,
+    &:focus {
+      background-color: #FFFFFF;
+      color: #000000;
+    }
+  }
+}
+
+@include mixins.respond-to(variables.$md) {
+
+}
+
+
+@include mixins.respond-to(variables.$xs) {
+
+}

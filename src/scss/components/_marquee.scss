@@ -1,0 +1,45 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 24px 0;
+  border-top: 1px solid rgba(34, 54, 73, 0.66);
+  border-bottom: 1px solid rgba(34, 54, 73, 0.66);
+  margin: 100px 0;
+}
+
+.marquee__track {
+  display: flex;
+  will-change: transform;
+  height: 76px;
+}
+
+.marquee__content {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding-right: 25px;
+  flex-shrink: 0;
+
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1;
+    color: #223649;
+  .text-light{
+    color: rgba(34, 54, 73, .66);
+  }
+strong{
+    font-weight: 500;
+  }
+}
+
+.marquee strong {
+  font-weight: 500;
+}
+
+.marquee img {
+  width: 66px;
+  height: 68px;
+  flex-shrink: 0;
+}

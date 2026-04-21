@@ -1,0 +1,174 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 300 24px/1.375 variables.$main-font;
+  height: 100%;
+  color: #000000;
+  letter-spacing: 0;
+  font-family: 'HelveticaNeueCyr', sans-serif !important;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section {
+  padding-bottom: 100px;
+  &__heading {
+    width: 33.33%;
+    padding-right: 16px;
+  }
+
+  &__text {
+    width: 66.67%;
+  }
+  &__wrap-btn{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+//.dynamic-content {
+//  p {
+//    margin-bottom: 15px;
+//    line-height: 1.1;
+//  }
+//
+//  img {
+//    max-width: 100%;
+//    height: auto;
+//
+//    &.alignleft {
+//      float: left;
+//      margin: 4px 25px 25px 0;
+//    }
+//
+//    &.alignright {
+//      float: right;
+//      margin: 4px 0 25px 25px;
+//    }
+//
+//    &.aligncenter {
+//      display: block;
+//      margin: 50px auto;
+//      clear: both;
+//    }
+//
+//    &.alignfull {
+//      width: 100%;
+//      height: auto;
+//      display: block;
+//      margin: 50px 0;
+//    }
+//  }
+//
+//
+//  h1, h2,
+//  h3, h4, h5, h6 {
+//  }
+//
+//  h3, h4, h5, h6 {
+//
+//  }
+//
+//  h1, h2 {
+//
+//  }
+//
+//  h3 {
+//
+//  }
+//
+//  h4 {
+//
+//  }
+//
+//  ul, ol {
+//
+//  }
+//
+//  ol {
+//    counter-reset: list;
+//
+//    li {
+//      overflow-wrap: anywhere;
+//      position: relative;
+//      list-style: inherit;
+//      padding-left: 35px;
+//
+//      &:before {
+//        position: absolute;
+//        top: 0;
+//        left: 8px;
+//        counter-increment: list;
+//        content: counter(list) '.';
+//      }
+//    }
+//  }
+//
+//  ul {
+//    li {
+//      &:before {
+//        content: ".";
+//        display: block;
+//        position: absolute;
+//        left: 17px;
+//        top: -8px;
+//      }
+//    }
+//  }
+//
+//  li {
+//    position: relative;
+//    padding-left: 34px;
+//    margin-bottom: 5px;
+//  }
+//
+//  a {
+//
+//    &:hover,
+//    &:focus {
+//
+//    }
+//  }
+//}
+//
+//
+//@include mixins.respond-to(variables.$xl) {
+//
+//}
+//
+//@include mixins.respond-to(variables.$lg) {
+//
+//}
+//
+//@include mixins.respond-to(variables.$md) {
+//
+//}
+//
+//@include mixins.respond-to(variables.$sm) {
+//
+//}
+//
+//@include mixins.respond-to(variables.$xs) {
+//
+//}
+//
+//@include mixins.respond-to(variables.$xxs) {
+//
+//}
