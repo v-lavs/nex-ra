@@ -453,7 +453,7 @@ input[type=text] {
   left: 0;
   right: 0;
   padding: 38px 0;
-  z-index: 2;
+  z-index: 20;
 }
 
 .header .container {
@@ -642,9 +642,6 @@ body.loaded .banner-strip {
   display: flex;
   position: relative;
   min-height: 728px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   color: #FFFFFF;
   padding-bottom: 37px;
 }
@@ -660,11 +657,22 @@ body.loaded .banner-strip {
   z-index: 1;
 }
 
+.section-banner__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  will-change: transform;
+}
+
 .section-banner .container {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   flex-grow: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .section-banner__title {

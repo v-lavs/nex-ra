@@ -19,9 +19,9 @@ body.loaded .banner-strip {
   display: flex;
   position: relative;
   min-height: 728px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  //background-position: center;
   color: #FFFFFF;
   padding-bottom: 37px;
 
@@ -35,12 +35,21 @@ body.loaded .banner-strip {
     height: auto;
     z-index: 1;
   }
-
+&__bg{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  will-change: transform;
+}
   .container {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     flex-grow: 1;
+    position: relative;
+    z-index: 2;
   }
 
   &__title {

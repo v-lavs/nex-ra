@@ -15,6 +15,21 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 document.addEventListener('DOMContentLoaded', () => {
+        //SECTION-BANNER ANIM
+        let enableParallax = window.innerWidth > 1024;
+
+        window.addEventListener('resize', () => {
+            enableParallax = window.innerWidth > 1024;
+        });
+
+        window.addEventListener('scroll', () => {
+            if (!enableParallax) return;
+
+            const heroBg = document.querySelector('.section-banner__bg');
+            const scrollY = window.scrollY;
+
+            heroBg.style.transform = `translateY(${scrollY * 0.15}px) scale(1.1)`;
+        });
 //COUNTER-NUMBERS
         const section = document.querySelector('.section-values');
         const counters = document.querySelectorAll('.counter__number');
