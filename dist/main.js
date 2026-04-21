@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let contentWidth = 0;
     let x = 0;
-    let speed = 4;
+    let speed = 2;
 
     function setup() {
         track.innerHTML = '';
