@@ -24,6 +24,8 @@ body.loaded .banner-strip {
   //background-position: center;
   color: #FFFFFF;
   padding-bottom: 37px;
+
+  min-height: 100vh;
 overflow: hidden;
   img {
     position: absolute;
