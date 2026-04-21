@@ -11,7 +11,9 @@ function destroySwiper(instance) {
     }
 }
 
-
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
 document.addEventListener('DOMContentLoaded', () => {
 //COUNTER-NUMBERS
         const section = document.querySelector('.section-values');

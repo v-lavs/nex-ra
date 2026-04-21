@@ -624,6 +624,20 @@ input[type=text] {
   border-color: #1a2a39;
 }
 
+.banner-strip {
+  opacity: 0;
+  filter: blur(10px);
+  transform: scale(1.05);
+  transition: all 1.4s ease;
+}
+
+body.loaded .banner-strip {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  transition-delay: 0.2s;
+}
+
 .section-banner {
   display: flex;
   position: relative;
