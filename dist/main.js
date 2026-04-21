@@ -15,7 +15,8 @@ window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 });
 document.addEventListener('DOMContentLoaded', () => {
-        //SECTION-BANNER ANIM
+
+//SECTION-BANNER ANIM
         let enableParallax = window.innerWidth > 1024;
 
         window.addEventListener('resize', () => {
@@ -35,9 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const counters = document.querySelectorAll('.counter__number');
 
         if (!section || !counters.length) return;
+
         function easeOutCubic(t) {
             return 1 - Math.pow(1 - t, 3);
         }
+
         function numberCountUp(element, countTo) {
             const numEl = element.querySelector('.num');
             const start = parseInt(numEl.textContent, 10) || 0;
