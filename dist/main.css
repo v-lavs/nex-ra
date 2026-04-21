@@ -253,7 +253,7 @@ body {
 
 .btn-to-top {
   position: fixed;
-  bottom: 48px;
+  bottom: 50px;
   right: 50px;
   z-index: 1000;
   opacity: 0;
@@ -644,6 +644,7 @@ body.loaded .banner-strip {
   min-height: 728px;
   color: #FFFFFF;
   padding-bottom: 37px;
+  min-height: 100vh;
   overflow: hidden;
 }
 
