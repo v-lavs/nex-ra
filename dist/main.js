@@ -11,12 +11,21 @@ function destroySwiper(instance) {
     }
 }
 
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
 document.addEventListener('DOMContentLoaded', () => {
 
 //SECTION-BANNER ANIM
+        const banner = document.querySelector('.section-banner');
+        const bg = document.querySelector('.section-banner__bg');
+
+        const img = new Image();
+        img.src = "assets/img/banner-home2.png";
+
+        img.onload = () => {
+            bg.style.backgroundImage = `url(${img.src})`;
+            banner.classList.add('loaded');
+        };
+
+// паралакс
         let enableParallax = window.innerWidth > 1024;
 
         window.addEventListener('resize', () => {
@@ -24,12 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         window.addEventListener('scroll', () => {
-            if (!enableParallax) return;
+            if (!enableParallax || !bg) return;
 
-            const heroBg = document.querySelector('.section-banner__bg');
             const scrollY = window.scrollY;
-
-            heroBg.style.transform = `translateY(${scrollY * 0.15}px) scale(1.1)`;
+            bg.style.transform = `translateY(${scrollY * 0.15}px) scale(1.1)`;
         });
 //COUNTER-NUMBERS
         const section = document.querySelector('.section-values');
