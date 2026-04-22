@@ -109,7 +109,8 @@ overflow: hidden;
 }
 
 .section-banner .banner-strip {
-  transform: translateX(-40px);
+  transform: translateX(-40px) scale(1.05);
+    filter: blur(10px);
   transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -133,7 +134,8 @@ overflow: hidden;
 
 .section-banner.loaded .banner-strip {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
+  filter: blur(0);
   transition-delay: 0.4s;
 }
 @include mixins.respond-to(variables.$xl) {

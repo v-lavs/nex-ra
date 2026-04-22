@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.classList.add('loaded');
         };
 
-// паралакс
+// parallax
         let enableParallax = window.innerWidth > 1024;
 
         window.addEventListener('resize', () => {
