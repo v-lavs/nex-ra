@@ -122,13 +122,13 @@ overflow: hidden;
 .section-banner.loaded .section-banner__title {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 1s
+  transition-delay: 1.5s;
 }
 
 .section-banner.loaded .section-banner__footer {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 1.2s;
+  transition-delay: 1.7s;
 }
 
 .section-banner.loaded .banner-strip {
