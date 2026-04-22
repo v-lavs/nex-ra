@@ -84,75 +84,53 @@ overflow: hidden;
     width: 100%;
   }
 }
-/* ФОН */
+// ANIM SECTION-BANNER
 .section-banner__bg {
   opacity: 0;
   transform: scale(1.1);
   transition: opacity 1.2s ease;
 }
 
-/* ВСІ елементи стартують однаково */
 .section-banner .section-banner__title,
 .section-banner .section-banner__footer,
 .section-banner .banner-strip {
   opacity: 0;
-  //transform: translateY(20px);
   will-change: transform, opacity;
 }
 
-/* Заголовок */
 .section-banner .section-banner__title {
-  //transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-
-  //transform: translateY(15px);
   transform: translateY(20px);
   transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Текст */
 .section-banner .section-banner__footer {
-  //transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-
   transform: translateY(15px);
   transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Смуга (зліва як ти хотіла) */
 .section-banner .banner-strip {
-  //transform: translateX(-40px);
+  transform: translateX(-40px);
   transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
-
-  transform: translateX(-30px);
-
 }
 
-/* 🔥 КОЛИ LOADED */
+/* LOADED */
 
-/* фон */
 .section-banner.loaded .section-banner__bg {
   opacity: 1;
 }
 
-/* заголовок */
 .section-banner.loaded .section-banner__title {
   opacity: 1;
-  //transform: translateY(0);
-  //transition-delay: 0.2s;
   transform: translateY(0);
   transition-delay: 1s
 }
 
-/* текст */
 .section-banner.loaded .section-banner__footer {
   opacity: 1;
-  //transform: translateY(0);
-  //transition-delay: 0.4s;
-
   transform: translateY(0);
   transition-delay: 1.2s;
 }
 
-/* смуга */
 .section-banner.loaded .banner-strip {
   opacity: 1;
   transform: translateX(0);
