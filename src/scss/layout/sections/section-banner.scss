@@ -14,25 +14,7 @@
 //  transform: scale(1);
 //  transition-delay: 0.2s;
 //}
-//.section-banner .banner-strip {
-//  opacity: 0;
-//  transform: translateX(-60px);
-//  transition: all 1.4s ease;
-//}
-//
-//.section-banner.loaded .banner-strip {
-//  opacity: 1;
-//  transform: translateX(0);
-//  transition-delay: 0.4s;
-//}
-//.section-banner__bg {
-//  opacity: 0;
-//  transition: opacity 1s ease;
-//}
-//
-//.section-banner__bg.loaded {
-//  opacity: 1;
-//}
+
 .section-banner {
   display: flex;
   position: relative;
@@ -43,7 +25,8 @@
   color: #FFFFFF;
   padding-bottom: 37px;
   min-height: 100vh;
-overflow: hidden;
+  overflow: hidden;
+
   img {
     position: absolute;
     display: block;
@@ -54,14 +37,16 @@ overflow: hidden;
     height: auto;
     z-index: 1;
   }
-&__bg{
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.1);
-  will-change: transform;
-}
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    will-change: transform;
+  }
+
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -84,12 +69,8 @@ overflow: hidden;
     width: 100%;
   }
 }
+
 // ANIM SECTION-BANNER
-.section-banner__bg {
-  opacity: 0;
-  transform: scale(1.1);
-  transition: opacity 1.2s ease;
-}
 
 .section-banner .section-banner__title,
 .section-banner .section-banner__footer,
@@ -98,20 +79,26 @@ overflow: hidden;
   will-change: transform, opacity;
 }
 
+.section-banner__bg {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1.2s ease;
+}
+
 .section-banner .section-banner__title {
   transform: translateY(20px);
-  transition: all 2s ; // cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1.2s;
 }
 
 .section-banner .section-banner__footer {
   transform: translateY(15px);
-  transition: all 2s; // cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 1.2s;
 }
 
 .section-banner .banner-strip {
   transform: translateX(-40px) scale(1.05);
-    filter: blur(10px);
-  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: blur(10px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* LOADED */
@@ -135,9 +122,10 @@ overflow: hidden;
 .section-banner.loaded .banner-strip {
   opacity: 1;
   transform: translateX(0) scale(1);
-  filter: blur(0);
   transition-delay: 0.4s;
+  filter: blur(0);
 }
+
 @include mixins.respond-to(variables.$xl) {
 
 }
