@@ -100,12 +100,12 @@ overflow: hidden;
 
 .section-banner .section-banner__title {
   transform: translateY(20px);
-  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 2s ; // cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-banner .section-banner__footer {
   transform: translateY(15px);
-  transition: all 2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 2s; // cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-banner .banner-strip {
