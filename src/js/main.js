@@ -72,11 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 //COUNTER-NUMBERS
-
-        const section = document.querySelector('.section-values');
         const counters = document.querySelectorAll('.counter__number');
-
-        if (!section || !counters.length) return;
 
         function easeOutCubic(t) {
             return 1 - Math.pow(1 - t, 3);
@@ -84,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function numberCountUp(element, countTo) {
             const numEl = element.querySelector('.num');
+            if (!numEl) return;
+
             const start = parseInt(numEl.textContent, 10) || 0;
 
             const duration = 3000;
@@ -91,33 +89,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
             function animate(time) {
                 const progress = Math.min((time - startTime) / duration, 1);
-                const eased = easeOutCubic(progress + Math.random() * 0.02);
+                const eased = easeOutCubic(progress);
 
-                numEl.textContent = Math.floor(start + eased * (countTo - start));
+                const value = Math.floor(start + eased * (countTo - start));
+                numEl.textContent = value;
 
-                if (progress < 1) requestAnimationFrame(animate);
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    numEl.textContent = countTo;
+                }
             }
 
             requestAnimationFrame(animate);
         }
 
-        const counterObserver = new IntersectionObserver((entries) => {
+        const observerCount = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
 
-                counters.forEach(el => {
-                    if (!el.dataset.animated) {
-                        const target = parseInt(el.dataset.target, 10);
-                        numberCountUp(el, target);
-                        el.dataset.animated = "true";
-                    }
-                });
+                const el = entry.target;
 
-                counterObserver.disconnect();
+                if (el.dataset.animated) return;
+
+                const target = parseInt(el.dataset.target, 10);
+
+                if (isNaN(target)) return;
+
+                numberCountUp(el, target);
+
+                el.dataset.animated = "true";
+
+                obs.unobserve(el);
             });
-        }, {threshold: 0.3});
+        }, { threshold: 0.3 });
 
-        counterObserver.observe(section);
+        counters.forEach(el => observerCount.observe(el));
+
         // MARQUEE
         const track = document.getElementById('track');
         const original = track.children[0];
