@@ -1,0 +1,199 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.slider-our-directions .swiper-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  gap: 16px;
+  position: relative;
+  margin-bottom: 67px;
+}
+
+.slide-our-direction {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 26px;
+  padding: 32px 22px;
+  height: 472px;
+
+  .part_left {
+    flex: 0 0 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: 0.6s ease;
+
+    .card__title {
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 1.22;
+      height: auto;
+      transition: .35s;
+      max-width: 288px;
+      width: 100%;
+    }
+  }
+
+  .part_right {
+    flex: 0 0 0;
+    opacity: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(40px);
+    transition: transform .6s ease, opacity .4s ease .2s;
+  }
+
+  .card__title-exp,
+  .part_right > div {
+    min-width: 288px;
+  }
+
+  .card__text {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .card__thumb {
+    width: 174px;
+    height: 174px;
+    margin: 0 auto;
+  }
+
+  &.expanded {
+    flex: 2;
+    background-color: #D3EAF3;
+
+    .part_left {
+      flex: 0 0 50%;
+      justify-content: center;
+      transition: 0.6s ease;
+    }
+
+    .part_right {
+      flex: 1;
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .card__title {
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, height 0.1s;
+    }
+  }
+}
+
+.card__thumb img {
+  width: 100%;
+  height: auto;
+}
+
+.card__title-exp {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.35;
+  margin-bottom: 20px;
+}
+
+
+@include mixins.respond-to(variables.$xxl) {
+  .slide-our-direction {
+    .part_left .card__title {
+      font-size: 22px;
+    }
+
+    .card__title-exp,
+    .part_right > div {
+      min-width: 252px;
+    }
+
+    .card__thumb {
+      width: 144px;
+      height: 144px;
+    }
+
+    .card__text {
+      font-size: 18px;
+    }
+  }
+  .card__title-exp {
+    font-size: 28px;
+  }
+}
+
+@include mixins.respond-to(variables.$xl) {
+  .slide-our-direction {
+    height: 390px;
+
+    .part_left .card__title {
+      font-size: 18px;
+      max-width: 190px;
+    }
+
+    .card__title-exp,
+    .part_right > div {
+      min-width: 190px;
+    }
+
+    .card__thumb {
+      width: 104px;
+      height: 104px;
+    }
+
+    .card__text {
+      font-size: 16px;
+    }
+  }
+  .card__title-exp {
+    font-size: 20px;
+  }
+}
+
+//@include mixins.respond-to(variables.$lg) {
+//  .slider-our-directions .swiper-wrapper {
+//    background: red;
+//    gap: 0;
+//    height: auto;
+//  }
+//  .slide-our-direction {
+//    flex: none;
+//    height: auto;
+//    display: block;
+//    &.expanded {
+//      flex: none;
+//    }
+//
+//    .part_left {
+//      justify-content: center;
+//      padding-right: 0;
+//      padding-bottom: 32px;
+//      height: auto;
+//
+//      .card__title {
+//        display: none;
+//      }
+//    }
+//
+//    .part_right {
+//      opacity: 1;
+//
+//      & > div {
+//        min-width: 0;
+//      }
+//    }
+//
+//    .card__thumb {
+//      width: 104px;
+//      height: 104px;
+//    }
+//  }
+//}

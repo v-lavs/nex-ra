@@ -1,10 +1,7 @@
 /*
  * to include js file write: `//= include ./path-to-file`
  */
-
-
-console.log('JS працює');
-
+'use strict'
 function destroySwiper(instance) {
     if (instance && instance instanceof Swiper && instance.initialized) {
         instance.destroy(true, true);
@@ -14,6 +11,7 @@ function destroySwiper(instance) {
 document.addEventListener('DOMContentLoaded', () => {
 
 //SECTION-BANNER ANIM
+
         const banner = document.querySelector('.section-banner');
         const bg = document.querySelector('.section-banner__bg');
 
@@ -26,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
 // parallax
+
         let enableParallax = window.innerWidth > 1024;
 
         window.addEventListener('resize', () => {
@@ -38,7 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollY = window.scrollY;
             bg.style.transform = `translateY(${scrollY * 0.15}px) scale(1.1)`;
         });
+
 //COUNTER-NUMBERS
+
         const section = document.querySelector('.section-values');
         const counters = document.querySelectorAll('.counter__number');
 
@@ -84,41 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {threshold: 0.3});
 
         counterObserver.observe(section);
-
-//  SLIDER MOB
-        let ourDirectionSlider;
-        const ourDirectionSelector = document.querySelector('.slider-our-directions');
-
-        function handleResponsive() {
-            if (window.innerWidth <= 1023) {
-                if (!ourDirectionSlider && ourDirectionSelector) {
-                    ourDirectionSlider = new Swiper('.slider-our-directions', {
-                        slidesPerView: 1.,
-                        spaceBetween: 16,
-                        pagination: {
-                            el: '.swiper-pagination',
-                            clickable: true,
-                        },
-                    });
-                } else {
-                    destroySwiper(ourDirectionSlider);
-                    ourDirectionSlider = null;
-                }
-            }
-        }
-
-        let resizeId;
-
-
-        handleResponsive();
-
-        window.addEventListener('resize', function () {
-            clearTimeout(resizeId);
-            resizeId = setTimeout(handleResponsive, 500);
-        });
-
-
-// MARQUEE
+        // MARQUEE
         const track = document.getElementById('track');
         const original = track.children[0];
 
@@ -168,30 +135,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //SLIDER ACCORDION
 
+        // const slides = document.querySelectorAll('.slide-our-direction');
+        // slides.forEach((slide) => {
+        //     slide.addEventListener('click', function () {
+        //         if (window.innerWidth >= 1025) {
+        //             expand(slide);
+        //         }
+        //     });
+        // });
+        //
+        // function expand(target) {
+        //     for (let slide of target.parentNode.children) {
+        //         slide.classList.remove('expanded');
+        //     }
+        //     target.classList.add('expanded');
+        // }
         const slides = document.querySelectorAll('.slide-our-direction');
-        slides.forEach((slide) => {
-            slide.addEventListener('click', function () {
-                if (window.innerWidth >= 1024) {
-                    expand(slide);
+
+        function setActive(slide) {
+            slides.forEach(s => s.classList.remove('expanded'));
+            slide.classList.add('expanded');
+        }
+
+// desktop only
+        slides.forEach(slide => {
+            slide.addEventListener('mouseenter', () => {
+                if (window.innerWidth > 1024) {
+                    setActive(slide);
                 }
             });
         });
 
-        function expand(target) {
-            for (let slide of target.parentNode.children) {
-                slide.classList.remove('expanded');
-            }
-            target.classList.add('expanded');
-        }
-
-
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) {
+            if (window.innerWidth <= 1024) {
                 slides.forEach(s => s.classList.remove('expanded'));
             }
         });
 
+//  SLIDER MOB
+
+        let ourDirectionSlider;
+        const ourDirectionSelector = document.querySelector('.slider-our-directions');
+
+        function handleResponsive() {
+            if (window.innerWidth <= 1024) {
+                if (!ourDirectionSlider && ourDirectionSelector) {
+                    ourDirectionSlider = new Swiper('.slider-our-directions', {
+                        slidesPerView: 1,
+                        spaceBetween: 16,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        breakpoints: {
+                            320: {
+                                slidesPerView: 1,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                            }
+                        },
+                    });
+                } else {
+                    destroySwiper(ourDirectionSlider);
+                    ourDirectionSlider = null;
+                }
+            }
+        }
+
+        let resizeId;
+
+
+        handleResponsive();
+
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeId);
+            resizeId = setTimeout(handleResponsive, 500);
+        });
+
         //BTN TO TOP
+
         const btn = document.querySelector('.btn-to-top');
         const footerBlock = document.querySelector('.footer__target-block');
 
@@ -213,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.remove('show');
             }
         });
-
     }
 );
 //# sourceMappingURL=main.js.map

@@ -7,15 +7,24 @@
   padding: 0 50px;
   margin: 0 auto;
 
+  @include mixins.respond-to(variables.$xxl){
+    max-width: 1280px;
+  }
+  @include mixins.respond-to(variables.$xl){
+    max-width: 1024px;
+  }
   @include mixins.respond-to(variables.$lg){
-    
+    max-width: 991px;
   }
-
+  @include mixins.respond-to(variables.$md){
+    max-width: 768px;
+  }
   @include mixins.respond-to(variables.$sm){
-  
+    max-width: 580px;
+  }
+  @include mixins.respond-to(variables.$xs){
+    max-width: 100%;
+    padding: 0 16px;
   }
 
-  @media screen and (max-width: 340px){
-  
-  }
 }
