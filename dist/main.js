@@ -15,22 +15,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const nav = document.querySelector('.header__nav');
         const btnOpen = document.querySelector('.btn_burger');
         const btnClose = document.querySelector('.btn_close');
+        const menuLinks = document.querySelectorAll('.menu__link');
         const backdrop = document.querySelector('.backdrop');
-        const body = document.querySelector('body');
+        const body = document.body;
 
-        btnOpen.addEventListener('click', (e) => {
-            e.preventDefault();
+        function closeMenu() {
+            nav.classList.remove('open');
+            body.classList.remove('disable-scroll');
+            backdrop.style.display = 'none';
+        }
+
+        function openMenu() {
             nav.classList.add('open');
             backdrop.style.display = 'block';
             body.classList.add('disable-scroll');
+        }
+
+        btnOpen.addEventListener('click', (e) => {
+            e.preventDefault();
+            openMenu();
         });
-        [btnClose, backdrop].forEach(function (e) {
-            e.addEventListener('click', () => {
-                nav.classList.remove('open');
-                body.classList.remove('disable-scroll');
-                backdrop.style.display = 'none';
-            })
-        })
+
+        btnClose.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
 //SECTION-BANNER ANIM
 
         const banner = document.querySelector('.section-banner');
