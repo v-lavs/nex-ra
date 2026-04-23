@@ -8,6 +8,7 @@
   margin-top: -30px;
   z-index: 0;
   padding-bottom: 34px;
+
   a {
     display: inline-block;
 
@@ -33,6 +34,10 @@
     line-height: 1.2;
   }
 
+  .form {
+    margin-left: 32px;
+  }
+
   .form,
   &__menu {
     display: flex;
@@ -45,11 +50,16 @@
     color: #D3EAF3;
     text-transform: uppercase;
     margin-right: 32px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__img {
     width: 100%;
-    img{
+
+    img {
       display: block;
       width: 100%;
     }
@@ -80,6 +90,7 @@
     cursor: pointer;
     color: #223649;
     margin: 0 17px;
+
     &:active {
       transform: scale(0.99);
       background-color: #b8d9e6;
@@ -90,19 +101,41 @@
 }
 
 @include mixins.respond-to(variables.$xl) {
-
+  .footer__contacts-item {
+    padding: 0 16px;
+  }
 }
 
-@include mixins.respond-to(variables.$xl) {
-
+@include mixins.respond-to(variables.$lg) {
+  .footer__menu-item {
+    margin-bottom: 16px;
+  }
+  .footer__contacts {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .footer__contacts-item {
+    width: 50%;
+    margin-bottom: 16px;
+  }
 }
 
 @include mixins.respond-to(variables.$md) {
-
+  .footer_bottom {
+    padding-top: 65px;
+  }
 }
 
 @include mixins.respond-to(variables.$sm) {
-
+.footer__contacts-item{
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+  .footer__target-block{
+    padding-left: 22px;
+    padding-right: 22px;
+  }
 }
 
 @include mixins.respond-to(variables.$xs) {

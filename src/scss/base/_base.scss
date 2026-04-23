@@ -1,5 +1,6 @@
 @use "../utils/mixins";
 @use "../utils/variables";
+
 html {
   scroll-behavior: smooth;
 }
@@ -9,7 +10,10 @@ body {
   height: 100%;
   color: #000000;
   letter-spacing: 0;
-  font-family: 'HelveticaNeueCyr', sans-serif !important;
+  font-family: 'HelveticaNeueCyr', sans-serif;
+  &.disable-scroll{
+    overflow: hidden;
+  }
 }
 
 .wrapper {
@@ -29,6 +33,7 @@ body {
 
 .section {
   padding-bottom: 100px;
+
   &__heading {
     width: 33.33%;
     padding-right: 16px;
@@ -37,7 +42,8 @@ body {
   &__text {
     width: 66.67%;
   }
-  &__wrap-btn{
+
+  &__wrap-btn {
     width: 100%;
     text-align: center;
   }
@@ -149,25 +155,43 @@ body {
 //}
 //
 //
-//@include mixins.respond-to(variables.$xl) {
-//
-//}
-//
-//@include mixins.respond-to(variables.$lg) {
-//
-//}
-//
+@include mixins.respond-to(variables.$xxl) {
+  body {
+    font-size: 22px;
+  }
+}
+
+@include mixins.respond-to(variables.$xl) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@include mixins.respond-to(variables.$lg) {
+  body {
+    font-size: 20px;
+  }
+}
+
 //@include mixins.respond-to(variables.$md) {
 //
 //}
-//
-//@include mixins.respond-to(variables.$sm) {
-//
-//}
-//
-//@include mixins.respond-to(variables.$xs) {
-//
-//}
+
+@include mixins.respond-to(variables.$sm) {
+  .section .section__text,
+  .section .section__heading {
+    width: 100%;
+  }
+  .section .section__heading {
+    padding-right: 0;
+    margin-bottom: 23px;
+  }
+}
+
+
+@include mixins.respond-to(variables.$xs) {
+
+}
 //
 //@include mixins.respond-to(variables.$xxs) {
 //

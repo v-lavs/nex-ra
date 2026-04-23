@@ -2,6 +2,7 @@
  * to include js file write: `//= include ./path-to-file`
  */
 'use strict'
+
 function destroySwiper(instance) {
     if (instance && instance instanceof Swiper && instance.initialized) {
         instance.destroy(true, true);
@@ -10,6 +11,26 @@ function destroySwiper(instance) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+//MOB MENU
+        const nav = document.querySelector('.header__nav');
+        const btnOpen = document.querySelector('.btn_burger');
+        const btnClose = document.querySelector('.btn_close');
+        const backdrop = document.querySelector('.backdrop');
+        const body = document.querySelector('body');
+
+        btnOpen.addEventListener('click', (e) => {
+            e.preventDefault();
+            nav.classList.add('open');
+            backdrop.style.display = 'block';
+            body.classList.add('disable-scroll');
+        });
+        [btnClose, backdrop].forEach(function (e) {
+            e.addEventListener('click', () => {
+                nav.classList.remove('open');
+                body.classList.remove('disable-scroll');
+                backdrop.style.display = 'none';
+            })
+        })
 //SECTION-BANNER ANIM
 
         const banner = document.querySelector('.section-banner');
@@ -134,22 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 //SLIDER ACCORDION
-
-        // const slides = document.querySelectorAll('.slide-our-direction');
-        // slides.forEach((slide) => {
-        //     slide.addEventListener('click', function () {
-        //         if (window.innerWidth >= 1025) {
-        //             expand(slide);
-        //         }
-        //     });
-        // });
-        //
-        // function expand(target) {
-        //     for (let slide of target.parentNode.children) {
-        //         slide.classList.remove('expanded');
-        //     }
-        //     target.classList.add('expanded');
-        // }
         const slides = document.querySelectorAll('.slide-our-direction');
 
         function setActive(slide) {
@@ -173,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 //  SLIDER MOB
-
         let ourDirectionSlider;
         const ourDirectionSelector = document.querySelector('.slider-our-directions');
 
@@ -181,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.innerWidth <= 1024) {
                 if (!ourDirectionSlider && ourDirectionSelector) {
                     ourDirectionSlider = new Swiper('.slider-our-directions', {
-                        slidesPerView: 1,
+
                         spaceBetween: 16,
                         pagination: {
                             el: '.swiper-pagination',
@@ -194,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             768: {
                                 slidesPerView: 2,
                             }
-                        },
+                        }
                     });
                 } else {
                     destroySwiper(ourDirectionSlider);
@@ -212,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearTimeout(resizeId);
             resizeId = setTimeout(handleResponsive, 500);
         });
+
 
         //BTN TO TOP
 

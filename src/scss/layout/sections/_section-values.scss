@@ -13,7 +13,8 @@
   gap: 16px;
   padding-top: 85px;
   padding-bottom: 70px;
-  width: 83.33%;
+  max-width: 1114px;
+  width: 100%;
   margin-left: auto;
 }
 
@@ -36,6 +37,7 @@
 
   &__body {
     display: flex;
+    align-items: center;
     padding-top: 32px;
   }
 
@@ -66,7 +68,39 @@
     align-items: baseline;
   }
 }
+@include mixins.respond-to(variables.$xl) {
+  .card-values {
+    padding: 42px 24px;
+    font-size: 18px;
+  }
+  .counter .suffix,
+  .counter__number {
+    font-size: 50px;
+  }
+}
 
+@include mixins.respond-to(variables.$lg) {
 
+}
 
-
+@include mixins.respond-to(variables.$md){
+  .values-list {
+    flex-direction: column;
+    gap: 21px;
+  }
+  .card-values {
+    width: 100%;
+    padding: 37px 68px;
+    font-size: 22px;
+  }
+  .counter .suffix,
+  .counter__number {
+    font-size: 55px;
+  }
+  .counter__item {
+    padding-bottom: 12px;
+  }
+  .card-values__body {
+    padding-top: 12px;
+  }
+}

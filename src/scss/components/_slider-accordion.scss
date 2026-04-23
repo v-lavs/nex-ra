@@ -2,12 +2,7 @@
 @use "../utils/variables";
 
 .slider-our-directions .swiper-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-
   gap: 16px;
-  position: relative;
   margin-bottom: 67px;
 }
 
@@ -141,7 +136,7 @@
 
     .card__title-exp,
     .part_right > div {
-      min-width: 190px;
+      min-width: 188px;
     }
 
     .card__thumb {
@@ -158,42 +153,58 @@
   }
 }
 
-//@include mixins.respond-to(variables.$lg) {
-//  .slider-our-directions .swiper-wrapper {
-//    background: red;
-//    gap: 0;
-//    height: auto;
-//  }
-//  .slide-our-direction {
-//    flex: none;
-//    height: auto;
-//    display: block;
-//    &.expanded {
-//      flex: none;
-//    }
-//
-//    .part_left {
-//      justify-content: center;
-//      padding-right: 0;
-//      padding-bottom: 32px;
-//      height: auto;
-//
-//      .card__title {
-//        display: none;
-//      }
-//    }
-//
-//    .part_right {
-//      opacity: 1;
-//
-//      & > div {
-//        min-width: 0;
-//      }
-//    }
-//
-//    .card__thumb {
-//      width: 104px;
-//      height: 104px;
-//    }
-//  }
-//}
+@include mixins.respond-to(variables.$lg) {
+  .slider-our-directions .swiper-wrapper {
+    gap: 0;
+    height: auto;
+  }
+  .slide-our-direction.expanded {
+    background: rgba(211, 234, 243, 0.29);
+  }
+  .slide-our-direction {
+    flex: none;
+    height: auto;
+    display: block;
+
+    &.expanded {
+      flex: none;
+    }
+
+    .part_left {
+      justify-content: center;
+      padding-right: 0;
+      padding-bottom: 32px;
+      height: auto;
+
+      .card__title {
+        display: none;
+      }
+    }
+
+    .part_right {
+      opacity: 1;
+      transform: none;
+
+      .card__title-exp,
+      & > div {
+        min-width: 0;
+        width: auto;
+      }
+    }
+
+    .card__thumb {
+      width: 104px;
+      height: 104px;
+    }
+  }
+}
+
+@include mixins.respond-to(variables.$sm){
+  .card__title-exp {
+    font-size: 28px;
+  }
+  .slide-our-direction .card__text {
+    font-size: 20px;
+  }
+}
+

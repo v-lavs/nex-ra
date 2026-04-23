@@ -43,3 +43,21 @@ strong{
   height: 68px;
   flex-shrink: 0;
 }
+
+@include mixins.respond-to(variables.$md) {
+  .marquee{
+    padding: 16px 0;
+  }
+  .marquee__track {
+    height: 60px;
+  }
+  .marquee__content {
+    font-size: 30px;
+    gap: 16px;
+    padding-right: 16px;
+  }
+  .marquee img {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,12 +1,12 @@
-//@use "../utils/mixins";
-//@use "../utils/variables";
+@use "../utils/mixins";
+@use "../utils/variables";
 
 .header {
   position: absolute;
   left: 0;
   right: 0;
   padding: 38px 0;
-  z-index: 20;
+  z-index: 600;
 
   .container {
     display: flex;
@@ -35,8 +35,9 @@
   .line {
     display: block;
     width: 30px;
-    height: 4px;
+    height: 2px;
     margin-bottom: 5px;
+    background-color: #fff;
 
     &:last-child {
       margin-bottom: 0;
@@ -83,51 +84,53 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #000;
-  opacity: .3;
+  background-color: rgba(17, 114, 143, .3);
+  backdrop-filter: blur(5px);
   z-index: 500;
 }
 
 
-//@include mixins.respond-to(variables.$md) {
-//  .header {
-//
-//    .container {
-//
-//    }
-//
-//    &__nav {
-//      position: absolute;
-//      left: 0;
-//      right: 0;
-//      top: -30px;
-//      transform: translateY(-100%);
-//      transition: transform .35s;
-//      background-color: #FFFFFF;
-//      padding: 100px 25px;
-//
-//      height: calc(100vh + 30px);
-//      height: calc(100svh + 30px);
-//      overflow-y: auto;
-//      -webkit-overflow-scrolling: touch;
-//
-//      &.open {
-//        transform: translateY(0);
-//      }
-//
-//      .btn_close {
-//        display: block;
-//      }
-//    }
-//  }
-//  .btn_burger {
-//    display: block;
-//  }
-//
-//}
-//@include mixins.respond-to(variables.$xs) {
-//
-//}
-//@include mixins.respond-to(variables.$xxs) {
-//
-//}
+@include mixins.respond-to(variables.$md) {
+  .header {
+    padding: 16px 0;
+
+    &__nav {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transform: translateX(100%);
+      transition: transform .35s;
+      background-color: #FFFFFF;
+      padding: 100px 25px;
+      overflow-y: auto;
+      height: 100vh;
+      max-width: 430px;
+      width: 100%;
+      z-index: 600;
+
+      &.open {
+        transform: translateX(0);
+      }
+    }
+
+    &__logo {
+      max-width: 80px;
+    }
+
+    .container {
+      align-items: center;
+    }
+
+    .btn_close,
+    .btn_burger {
+      display: block;
+    }
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .header {
+
+  }
+}

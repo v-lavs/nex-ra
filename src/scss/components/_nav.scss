@@ -36,7 +36,20 @@
 }
 
 @include mixins.respond-to(variables.$md) {
-
+.menu{
+  flex-wrap: wrap;
+  &__item{
+    font-size: 24px;
+    width: 100%;
+    margin-bottom: 16px;
+    border: none;
+    box-shadow: none;
+  }
+}
+  .header_white .menu__item{
+    color: #223649;
+    background:none;
+  }
 }
 
 
