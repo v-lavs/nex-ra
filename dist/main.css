@@ -1230,6 +1230,10 @@ input[type=text] {
     max-width: 370px;
   }
 
+  .section-banner .banner-strip {
+    height: 14%;
+  }
+
   .values-list {
     flex-direction: column;
     gap: 21px;
