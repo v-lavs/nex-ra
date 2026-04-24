@@ -43,13 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', closeMenu);
         });
 
-//SECTION-BANNER ANIM
+// LOGO HEADER ANIM
+        const header = document.querySelector('.header');
+        window.addEventListener('load', () => {
+            header.classList.add('loaded');
+        });
 
+//SECTION-BANNER ANIM
         const banner = document.querySelector('.section-banner');
         const bg = document.querySelector('.section-banner__bg');
 
         const img = new Image();
-        img.src = "assets/img/banner-home2.png";
+        img.src = "assets/img/banner-home2.webp";
 
         img.onload = () => {
             bg.style.backgroundImage = `url(${img.src})`;

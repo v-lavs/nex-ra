@@ -10,12 +10,18 @@
 
   .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 
   &__logo {
-    max-width: 121px;
-    display: inline-block;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
 
     svg,
     img {
@@ -24,15 +30,48 @@
       height: auto;
     }
   }
+
+  .logo-mob {
+    display: none;
+  }
+
+  &__nav {
+    position: relative;
+    z-index: 1;
+  }
 }
+
+//----------------------- anim logo
+.header .banner-strip {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.header .banner-strip {
+  pointer-events: none;
+  transform: translateX(-40px) scale(1.03);
+  filter: blur(10px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header.loaded .banner-strip {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition-delay: 0.4s;
+  filter: blur(0);
+}
+
+//---------------------- end anim logo
 
 .btn_burger {
   display: none;
-
+  position: relative;
   border: none;
   background-color: transparent;
   height: 27px;
   margin-left: 24px;
+  cursor: pointer;
+  z-index: 1;
 
   .line {
     display: block;
@@ -94,8 +133,6 @@
 
 @include mixins.respond-to(variables.$md) {
   .header {
-    padding: 16px 0;
-
     &__nav {
       position: fixed;
       right: 0;
@@ -116,14 +153,6 @@
       }
     }
 
-    &__logo {
-      max-width: 80px;
-    }
-
-    .container {
-      align-items: center;
-    }
-
     .btn_close,
     .btn_burger {
       display: block;
@@ -133,6 +162,27 @@
 
 @include mixins.respond-to(variables.$xs) {
   .header {
+    padding: 16px 0;
+    &__logo {
+      position: static;
+      max-width: 160px;
+    }
 
+    .header .banner-strip {
+      pointer-events: all;
+    }
+
+    .logo-desk {
+      display: none !important;
+    }
+
+    .logo-mob {
+      display: block;
+    }
+
+    .container {
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }

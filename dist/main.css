@@ -591,12 +591,18 @@ input[type=text] {
 
 .header .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .header__logo {
-  max-width: 121px;
-  display: inline-block;
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
 }
 
 .header__logo svg,
@@ -606,12 +612,43 @@ input[type=text] {
   height: auto;
 }
 
+.header .logo-mob {
+  display: none;
+}
+
+.header__nav {
+  position: relative;
+  z-index: 1;
+}
+
+.header .banner-strip {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.header .banner-strip {
+  pointer-events: none;
+  transform: translateX(-40px) scale(1.03);
+  filter: blur(10px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header.loaded .banner-strip {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition-delay: 0.4s;
+  filter: blur(0);
+}
+
 .btn_burger {
   display: none;
+  position: relative;
   border: none;
   background-color: transparent;
   height: 27px;
   margin-left: 24px;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .btn_burger .line {
@@ -777,17 +814,6 @@ input[type=text] {
   overflow: hidden;
 }
 
-.section-banner img {
-  position: absolute;
-  display: block;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-  z-index: 1;
-}
-
 .section-banner__bg {
   position: absolute;
   inset: 0;
@@ -819,8 +845,7 @@ input[type=text] {
 }
 
 .section-banner .section-banner__title,
-.section-banner .section-banner__footer,
-.section-banner .banner-strip {
+.section-banner .section-banner__footer {
   opacity: 0;
   will-change: transform, opacity;
 }
@@ -841,12 +866,6 @@ input[type=text] {
   transition: all 1.2s;
 }
 
-.section-banner .banner-strip {
-  transform: translateX(-40px) scale(1.05);
-  filter: blur(10px);
-  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 /* LOADED */
 
 .section-banner.loaded .section-banner__bg {
@@ -863,13 +882,6 @@ input[type=text] {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 1.7s;
-}
-
-.section-banner.loaded .banner-strip {
-  opacity: 1;
-  transform: translateX(0) scale(1);
-  transition-delay: 0.4s;
-  filter: blur(0);
 }
 
 .section-values {
@@ -1174,10 +1186,6 @@ input[type=text] {
     max-width: 768px;
   }
 
-  .header {
-    padding: 16px 0;
-  }
-
   .header__nav {
     position: fixed;
     right: 0;
@@ -1196,14 +1204,6 @@ input[type=text] {
 
   .header__nav.open {
     transform: translateX(0);
-  }
-
-  .header__logo {
-    max-width: 80px;
-  }
-
-  .header .container {
-    align-items: center;
   }
 
   .header .btn_close,
@@ -1325,6 +1325,32 @@ input[type=text] {
     padding: 0 16px;
   }
 
+  .header {
+    padding: 16px 0;
+  }
+
+  .header__logo {
+    position: static;
+    max-width: 160px;
+  }
+
+  .header .header .banner-strip {
+    pointer-events: all;
+  }
+
+  .header .logo-desk {
+    display: none !important;
+  }
+
+  .header .logo-mob {
+    display: block;
+  }
+
+  .header .container {
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .footer {
     padding-top: 64px;
   }
@@ -1361,7 +1387,7 @@ input[type=text] {
   }
 
   .card-values {
-    padding: 60px 37px;
+    padding: 42px 37px;
   }
 
   .counter__item {
