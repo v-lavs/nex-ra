@@ -184,13 +184,15 @@ body {
   }
   .section .section__heading {
     padding-right: 0;
-    margin-bottom: 23px;
+    margin-bottom: 24px;
   }
 }
 
 
 @include mixins.respond-to(variables.$xs) {
-
+.section{
+  padding-bottom: 64px;
+}
 }
 //
 //@include mixins.respond-to(variables.$xxs) {

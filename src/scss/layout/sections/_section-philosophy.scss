@@ -7,7 +7,14 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
+
   .section__text {
     margin-bottom: 67px;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .section-philosophy .section__text {
+    margin-bottom: 32px;
   }
 }

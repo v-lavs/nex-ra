@@ -37,7 +37,7 @@
 }
 
 @include mixins.respond-to(variables.$xl) {
-  .heading {
+ .section .heading {
     font-size: 32px;
   }
 }
@@ -48,10 +48,10 @@
 }
 @include mixins.respond-to(variables.$md) {
   .heading {
-    font-size: 28px;
+    font-size: 32px;
   }
   .heading_lg{
-    font-size: clamp(34px, 26.1px + 2.47vw, 45px);
+    font-size: clamp(24px, 2.28px + 5.57vw, 45px);
   }
 }
 

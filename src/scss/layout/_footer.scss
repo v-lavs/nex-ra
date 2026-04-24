@@ -131,20 +131,40 @@
 }
 
 @include mixins.respond-to(variables.$sm) {
-.footer__contacts-item{
-  width: 100%;
-  padding: 0;
-  text-align: center;
-}
+  .footer__contacts-item {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
 
-  .footer__target-block{
+  .footer__target-block {
     padding-left: 22px;
     padding-right: 22px;
   }
 }
 
 @include mixins.respond-to(variables.$xs) {
+  .footer {
+    padding-top: 64px;
 
+    &__menu-item {
+      font-size: 16px;
+    }
+
+    .form {
+      flex-wrap: wrap;
+
+      &__group {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
 }
 
 @include mixins.respond-to(variables.$xxs) {

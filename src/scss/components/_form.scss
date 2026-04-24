@@ -61,7 +61,10 @@ input[type="text"] {
 }
 
 @include mixins.respond-to(variables.$xs) {
-
+  .form__group input:not(:placeholder-shown) ~ label,
+  .form__group input:focus ~ label {
+    top: -12px;
+  }
 }
 
 @include mixins.respond-to(variables.$xxs) {

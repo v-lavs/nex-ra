@@ -104,3 +104,21 @@
     padding-top: 12px;
   }
 }
+@include mixins.respond-to(variables.$xs) {
+  .section-values {
+    padding-top: 32px;
+  }
+  .values-list {
+    padding: 32px 0;
+    gap: 18px;
+  }
+  .card-values{
+    padding: 60px 37px;
+  }
+  .counter__item {
+    padding-bottom: 32px;
+  }
+  .card-values__body {
+    padding-top: 32px;
+  }
+}
