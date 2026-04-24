@@ -126,28 +126,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         counters.forEach(el => observerCount.observe(el));
 
-        // MARQUEE
-        const track = document.getElementById('track');
+// MARQUEE
+        const track = document.querySelector('.marquee__track');
 
-        let speed = 2;
+        let speed = 3;
         let x = 0;
         let width = 0;
 
-        function setup() {
-            const content = track.querySelector('.marquee__content');
-
-            track.innerHTML = '';
-
-            const clone1 = content.cloneNode(true);
-            const clone2 = content.cloneNode(true);
-
-            track.appendChild(clone1);
-            track.appendChild(clone2);
-
-            requestAnimationFrame(() => {
-                width = clone1.offsetWidth;
-                x = 0;
-            });
+        function measure() {
+            const group = track.querySelector('.marquee__content');
+            width = group.offsetWidth;
         }
 
         function animate() {
@@ -163,20 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         window.addEventListener('load', () => {
-            setup();
+            measure();
             animate();
         });
 
-        let resizeTimeout;
-
         window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-
-            resizeTimeout = setTimeout(() => {
-                setup();
-            }, 150);
+            measure();
         });
-
 
 //SLIDER ACCORDION DESKTOP ONLY
         const slides = document.querySelectorAll('.slide-our-direction');

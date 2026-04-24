@@ -1,5 +1,6 @@
 @use "../utils/mixins";
 @use "../utils/variables";
+
 .marquee {
   overflow: hidden;
   width: 100%;
@@ -23,15 +24,26 @@
   padding-right: 25px;
   flex-shrink: 0;
 
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 1;
-    color: #223649;
-  .text-light{
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1;
+  color: #223649;
+
+  .text-light {
     color: rgba(34, 54, 73, .66);
   }
-strong{
+
+  strong {
     font-weight: 500;
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
@@ -46,7 +58,7 @@ strong{
 }
 
 @include mixins.respond-to(variables.$md) {
-  .marquee{
+  .marquee {
     padding: 16px 0;
   }
   .marquee__track {
