@@ -91,6 +91,9 @@
     min-height: 0;
     height: 100vh;
     max-height: 1024px;
+    .section-banner__bg{
+      transform: none;
+    }
   }
 }
 

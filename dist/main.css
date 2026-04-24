@@ -1135,6 +1135,10 @@ input[type=text] {
     height: 100vh;
     max-height: 1024px;
   }
+
+  .section-banner .section-banner__bg {
+    transform: none;
+  }
 }
 
 @media only screen and (max-width: 880px) {
@@ -1391,11 +1395,11 @@ input[type=text] {
   }
 
   .counter__item {
-    padding-bottom: 32px;
+    padding-bottom: 24px;
   }
 
   .card-values__body {
-    padding-top: 32px;
+    padding-top: 24px;
   }
 
   .section-philosophy .section__text {
