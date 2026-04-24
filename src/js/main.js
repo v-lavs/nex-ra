@@ -122,38 +122,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 obs.unobserve(el);
             });
-        }, { threshold: 0.3 });
+        }, {threshold: 0.3});
 
         counters.forEach(el => observerCount.observe(el));
 
         // MARQUEE
         const track = document.getElementById('track');
-        const original = track.children[0];
 
-        let contentWidth = 0;
-        let x = 0;
         let speed = 2;
+        let x = 0;
+        let width = 0;
 
         function setup() {
+            const content = track.querySelector('.marquee__content');
+
             track.innerHTML = '';
-            track.appendChild(original);
 
-            contentWidth = original.offsetWidth;
+            const clone1 = content.cloneNode(true);
+            const clone2 = content.cloneNode(true);
 
-            while (track.scrollWidth < window.innerWidth * 2) {
-                track.appendChild(original.cloneNode(true));
-            }
-            x = 0;
+            track.appendChild(clone1);
+            track.appendChild(clone2);
+
+            requestAnimationFrame(() => {
+                width = clone1.offsetWidth;
+                x = 0;
+            });
         }
 
         function animate() {
             x -= speed;
 
-            if (contentWidth > 0) {
-                x = x % contentWidth;
+            if (Math.abs(x) >= width) {
+                x += width;
             }
 
             track.style.transform = `translate3d(${x}px, 0, 0)`;
+
             requestAnimationFrame(animate);
         }
 
@@ -162,19 +167,18 @@ document.addEventListener('DOMContentLoaded', () => {
             animate();
         });
 
-        const observer = new ResizeObserver(() => {
-            setup();
+        let resizeTimeout;
+
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+
+            resizeTimeout = setTimeout(() => {
+                setup();
+            }, 150);
         });
 
-        observer.observe(original);
 
-        if (document.fonts) {
-            document.fonts.ready.then(() => {
-                setup();
-            });
-        }
-
-//SLIDER ACCORDION
+//SLIDER ACCORDION DESKTOP ONLY
         const slides = document.querySelectorAll('.slide-our-direction');
 
         function setActive(slide) {
@@ -182,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.classList.add('expanded');
         }
 
-// desktop only
         slides.forEach(slide => {
             slide.addEventListener('mouseenter', () => {
                 if (window.innerWidth > 1024) {
@@ -197,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-//  SLIDER MOB
+//SLIDER MOB
         let ourDirectionSlider;
         const ourDirectionSelector = document.querySelector('.slider-our-directions');
 
@@ -238,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 
-        //BTN TO TOP
+//BTN TO TOP
 
         const btn = document.querySelector('.btn-to-top');
         const footerBlock = document.querySelector('.footer__target-block');

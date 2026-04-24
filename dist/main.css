@@ -425,6 +425,8 @@ input[type=text] {
 .marquee__track {
   display: flex;
   will-change: transform;
+  width: -moz-max-content;
+  width: max-content;
   height: 76px;
 }
 

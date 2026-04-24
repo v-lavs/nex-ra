@@ -12,6 +12,7 @@
 .marquee__track {
   display: flex;
   will-change: transform;
+  width: max-content;
   height: 76px;
 }
 
