@@ -10,19 +10,19 @@
 }
 
 .swiper-pagination-bullet {
-  width: 50px;
-  height: 2px;
+  width: 12px;
+  height: 12px;
   background-color: #E4E4E4;
-  border-radius: 2px;
+  //border-radius: 2px;
   opacity: 1;
   transition: background-color 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #7EA68C;
+  background-color: #11728F;
 }
 
-@include mixins.respond-to(variables.$xs) {
+@include mixins.respond-to(variables.$lg) {
 
   .swiper-pagination.swiper-pagination-bullets{
     display: flex!important;

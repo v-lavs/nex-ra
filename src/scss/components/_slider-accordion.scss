@@ -1,9 +1,11 @@
 @use "../utils/mixins";
 @use "../utils/variables";
 
-.slider-our-directions .swiper-wrapper {
-  gap: 16px;
+.slider-our-directions {
   margin-bottom: 67px;
+  .swiper-wrapper {
+    gap: 16px;
+  }
 }
 
 .slide-our-direction {
@@ -154,9 +156,12 @@
 }
 
 @include mixins.respond-to(variables.$lg) {
-  .slider-our-directions .swiper-wrapper {
-    gap: 0;
-    height: auto;
+  .slider-our-directions {
+    padding-bottom: 40px;
+    .swiper-wrapper {
+      gap: 0;
+      height: auto;
+    }
   }
   .slide-our-direction.expanded {
     background: rgba(211, 234, 243, 0.29);

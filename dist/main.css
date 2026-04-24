@@ -343,16 +343,15 @@ body.disable-scroll {
 }
 
 .swiper-pagination-bullet {
-  width: 50px;
-  height: 2px;
+  width: 12px;
+  height: 12px;
   background-color: #E4E4E4;
-  border-radius: 2px;
   opacity: 1;
   transition: background-color 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #7EA68C;
+  background-color: #11728F;
 }
 
 .card {
@@ -459,9 +458,12 @@ input[type=text] {
   flex-shrink: 0;
 }
 
+.slider-our-directions {
+  margin-bottom: 67px;
+}
+
 .slider-our-directions .swiper-wrapper {
   gap: 16px;
-  margin-bottom: 67px;
 }
 
 .slide-our-direction {
@@ -1027,6 +1029,14 @@ input[type=text] {
     font-size: 30px;
   }
 
+  .swiper-pagination.swiper-pagination-bullets {
+    display: flex !important;
+  }
+
+  .slider-our-directions {
+    padding-bottom: 40px;
+  }
+
   .slider-our-directions .swiper-wrapper {
     gap: 0;
     height: auto;
@@ -1188,8 +1198,9 @@ input[type=text] {
     padding-top: 65px;
   }
 
-  .form {
+  .footer .form {
     margin-left: 0;
+    max-width: 100%;
   }
 
   .section-banner__footer {
@@ -1266,10 +1277,6 @@ input[type=text] {
 }
 
 @media only screen and (max-width: 580px) {
-  .swiper-pagination.swiper-pagination-bullets {
-    display: flex !important;
-  }
-
   .container {
     max-width: 100%;
     padding: 0 16px;
