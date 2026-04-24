@@ -133,8 +133,8 @@
 
 @include mixins.respond-to(variables.$xs) {
   .section-banner {
-    height: auto;
-    min-height: 452px;
+    //height: auto;
+    //min-height: 452px;
     &__footer {
       font-size: 20px;
     }
