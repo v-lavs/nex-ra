@@ -106,10 +106,10 @@
 }
 @include mixins.respond-to(variables.$xs) {
   .section-values {
-    padding-top: 32px;
+    padding-top: 56px;
   }
   .values-list {
-    padding: 32px 0;
+    padding: 56px 0;
     gap: 18px;
   }
   .card-values{

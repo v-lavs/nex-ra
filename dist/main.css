@@ -807,7 +807,6 @@ input[type=text] {
 }
 
 .section-banner__title {
-  max-width: 500px;
   width: 100%;
 }
 
@@ -1132,7 +1131,7 @@ input[type=text] {
   }
 
   .heading_lg {
-    font-size: clamp(24px, 2.28px + 5.57vw, 45px);
+    font-size: 55px;
   }
 
   .menu {
@@ -1226,10 +1225,6 @@ input[type=text] {
     line-height: 1.3;
   }
 
-  .section-banner__title {
-    max-width: 370px;
-  }
-
   .values-list {
     flex-direction: column;
     gap: 21px;
@@ -1301,7 +1296,15 @@ input[type=text] {
 
 @media only screen and (max-width: 580px) {
   .section {
-    padding-bottom: 64px;
+    padding-bottom: 56px;
+  }
+
+  .section .section__heading {
+    margin-bottom: 16px;
+  }
+
+  .heading_lg {
+    font-size: clamp(36px, 17.53px + 4.74vw, 45px);
   }
 
   .form__group input:not(:-moz-placeholder) ~ label {
@@ -1314,7 +1317,7 @@ input[type=text] {
   }
 
   .marquee {
-    margin: 64px 0;
+    margin: 56px 0;
   }
 
   .container {
@@ -1344,21 +1347,16 @@ input[type=text] {
     width: 100%;
   }
 
-  .section-banner {
-    height: auto;
-    min-height: 452px;
-  }
-
   .section-banner__footer {
     font-size: 20px;
   }
 
   .section-values {
-    padding-top: 32px;
+    padding-top: 56px;
   }
 
   .values-list {
-    padding: 32px 0;
+    padding: 56px 0;
     gap: 18px;
   }
 

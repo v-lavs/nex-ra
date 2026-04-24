@@ -191,8 +191,11 @@ body {
 
 @include mixins.respond-to(variables.$xs) {
 .section{
-  padding-bottom: 64px;
+  padding-bottom: 56px;
 }
+  .section .section__heading {
+    margin-bottom: 16px;
+  }
 }
 //
 //@include mixins.respond-to(variables.$xxs) {
