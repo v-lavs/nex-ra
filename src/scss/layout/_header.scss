@@ -17,7 +17,9 @@
     max-width: 121px;
     display: inline-block;
 
+    svg,
     img {
+      display: block;
       width: 100%;
       height: auto;
     }
