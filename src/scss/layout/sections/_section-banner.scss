@@ -126,9 +126,9 @@
   }
 }
 
-@include mixins.respond-to(variables.$md) {
+@include mixins.respond-to(variables.$sm) {
 .section-banner .banner-strip{
-  height: 14%;
+  height: 12%;
 }
 }
 
