@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // parallax
 
         let enableParallax = window.innerWidth > 1024;
-
+        const bg = document.querySelector('.section-banner__bg');
         window.addEventListener('resize', () => {
             enableParallax = window.innerWidth > 1024;
         });
