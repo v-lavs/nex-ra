@@ -3,6 +3,7 @@
 
 .slider-our-directions {
   margin-bottom: 67px;
+
   .swiper-wrapper {
     gap: 16px;
   }
@@ -163,6 +164,7 @@
 @include mixins.respond-to(variables.$lg) {
   .slider-our-directions {
     padding-bottom: 40px;
+
     .swiper-wrapper {
       gap: 0;
       height: auto;
@@ -186,6 +188,7 @@
       padding-bottom: 32px;
       height: auto;
       max-width: 100%;
+
       .card__title {
         display: none;
       }
@@ -194,6 +197,7 @@
     .part_right {
       opacity: 1;
       transform: none;
+      max-width: 100%;
 
       .card__title-exp,
       & > div {
@@ -209,7 +213,7 @@
   }
 }
 
-@include mixins.respond-to(variables.$sm){
+@include mixins.respond-to(variables.$sm) {
   .card__title-exp {
     font-size: 28px;
   }
@@ -217,6 +221,7 @@
     font-size: 20px;
   }
 }
+
 @include mixins.respond-to(variables.$sm) {
   .slider-our-directions {
     margin-bottom: 32px;

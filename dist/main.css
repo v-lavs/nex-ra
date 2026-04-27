@@ -1115,6 +1115,7 @@ input[type=text] {
   .slide-our-direction .part_right {
     opacity: 1;
     transform: none;
+    max-width: 100%;
   }
 
   .slide-our-direction .part_right .card__title-exp,
