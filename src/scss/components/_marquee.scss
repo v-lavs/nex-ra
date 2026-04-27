@@ -15,6 +15,11 @@
   will-change: transform;
   width: max-content;
   height: 76px;
+
+
+  backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .marquee__content {
@@ -37,15 +42,15 @@
     font-weight: 500;
   }
 }
-
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
+//
+//@keyframes scroll {
+//  from {
+//    transform: translateX(0);
+//  }
+//  to {
+//    transform: translateX(-100%);
+//  }
+//}
 
 
 .marquee strong {

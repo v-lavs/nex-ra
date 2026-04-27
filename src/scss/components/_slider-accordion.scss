@@ -24,7 +24,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    transition: 0.6s ease;
+    transition: 0.8s ease;
 
     .card__title {
       font-weight: 400;
@@ -35,6 +35,8 @@
       transition: .35s;
       max-width: 288px;
       width: 100%;
+
+      transition: opacity 0.6s ease, height 0.6s;
     }
   }
 
@@ -46,7 +48,8 @@
     flex-direction: column;
     justify-content: center;
     transform: translateX(40px);
-    transition: transform .6s ease, opacity .4s ease .2s;
+    transition: transform .8s ease, opacity .6s ease .2s;
+    max-width: 50%;
   }
 
   .card__title-exp,
@@ -86,7 +89,7 @@
       opacity: 0;
       height: 0;
       visibility: hidden;
-      transition: opacity 0.3s ease, height 0.1s;
+      transition: opacity 0.6s ease, height 0.6s;
     }
   }
 }
