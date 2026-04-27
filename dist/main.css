@@ -642,7 +642,7 @@ input[type=text] {
 .header.loaded .banner-strip {
   opacity: 1;
   transform: translateX(0) scale(1);
-  transition-delay: 0.4s;
+  transition-delay: 0.6s;
   filter: blur(0);
 }
 
@@ -858,8 +858,10 @@ input[type=text] {
 
 .section-banner__bg {
   opacity: 0;
-  transform: scale(1.1);
+  transform: scale(1.1) translateZ(0);
   transition: opacity 1.2s ease;
+  filter: contrast(1.1) brightness(1.05) saturate(1.1);
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .section-banner .section-banner__title {

@@ -45,21 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // LOGO HEADER ANIM
         const header = document.querySelector('.header');
+        const banner = document.querySelector('.section-banner');
         window.addEventListener('load', () => {
             header.classList.add('loaded');
+            banner.classList.add('loaded');
         });
 
 //SECTION-BANNER ANIM
-        const banner = document.querySelector('.section-banner');
-        const bg = document.querySelector('.section-banner__bg');
 
-        const img = new Image();
-        img.src = "assets/img/banner-home2.webp";
 
-        img.onload = () => {
-            bg.style.backgroundImage = `url(${img.src})`;
-            banner.classList.add('loaded');
-        };
+
 
 // parallax
 
@@ -130,47 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {threshold: 0.3});
 
         counters.forEach(el => observerCount.observe(el));
-
-// MARQUEE
-//         const track = document.querySelector('.marquee__track');
-//
-//         let speed = 3;
-//         let x = 0;
-//         let width = 0;
-//
-//         function measure() {
-//             const group = track.querySelector('.marquee__content');
-//             width = group.offsetWidth;
-//         }
-//
-//         function animate() {
-//
-//             if (window.innerWidth > 1024) {
-//                 track.style.transform = '';
-//                 requestAnimationFrame(animate);
-//                 return;
-//             }
-//
-//             x -= speed;
-//
-//             if (Math.abs(x) >= width) {
-//                 x += width;
-//             }
-//
-//             track.style.transform = `translate3d(${x}px, 0, 0)`;
-//
-//             requestAnimationFrame(animate);
-//         }
-//
-//         window.addEventListener('load', () => {
-//             measure();
-//             animate();
-//         });
-//
-//         window.addEventListener('resize', () => {
-//             measure();
-//         });
-
 
 //SLIDER ACCORDION DESKTOP ONLY
         const slides = document.querySelectorAll('.slide-our-direction');
