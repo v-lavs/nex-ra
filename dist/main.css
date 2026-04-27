@@ -424,6 +424,7 @@ input[type=text] {
   border-top: 1px solid rgba(34, 54, 73, 0.66);
   border-bottom: 1px solid rgba(34, 54, 73, 0.66);
   margin: 100px 0;
+  pointer-events: none;
 }
 
 .marquee__track {
@@ -435,6 +436,7 @@ input[type=text] {
   backface-visibility: hidden;
   perspective: 1000px;
   -webkit-font-smoothing: subpixel-antialiased;
+  animation: scroll-marquee 15s linear infinite;
 }
 
 .marquee__content {
@@ -475,15 +477,6 @@ input[type=text] {
   to {
     transform: translate3d(-50%, 0, 0);
   }
-}
-
-.marquee__track {
-  display: flex;
-  will-change: transform;
-  width: -moz-max-content;
-  width: max-content;
-  height: 76px;
-  animation: scroll-marquee 15s linear infinite;
 }
 
 .slider-our-directions {
