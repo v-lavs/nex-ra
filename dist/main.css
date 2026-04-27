@@ -474,6 +474,25 @@ input[type=text] {
   flex-shrink: 0;
 }
 
+@keyframes scroll-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee__track {
+  display: flex;
+  will-change: transform;
+  width: -moz-max-content;
+  width: max-content;
+  height: 76px;
+  animation: scroll-marquee 15s linear infinite;
+}
+
 .slider-our-directions {
   margin-bottom: 67px;
 }

@@ -47,6 +47,7 @@
   }
 }
 
+
 .marquee strong {
   font-weight: 500;
 }
@@ -56,7 +57,20 @@
   height: 68px;
   flex-shrink: 0;
 }
+@keyframes scroll-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
 
+.marquee__track {
+  display: flex;
+  will-change: transform;
+  width: max-content;
+  height: 76px;
+
+
+  animation: scroll-marquee 15s linear infinite;
+}
 @include mixins.respond-to(variables.$md) {
   .marquee {
     padding: 16px 0;

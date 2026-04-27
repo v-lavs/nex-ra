@@ -132,37 +132,45 @@ document.addEventListener('DOMContentLoaded', () => {
         counters.forEach(el => observerCount.observe(el));
 
 // MARQUEE
-        const track = document.querySelector('.marquee__track');
+//         const track = document.querySelector('.marquee__track');
+//
+//         let speed = 3;
+//         let x = 0;
+//         let width = 0;
+//
+//         function measure() {
+//             const group = track.querySelector('.marquee__content');
+//             width = group.offsetWidth;
+//         }
+//
+//         function animate() {
+//
+//             if (window.innerWidth > 1024) {
+//                 track.style.transform = '';
+//                 requestAnimationFrame(animate);
+//                 return;
+//             }
+//
+//             x -= speed;
+//
+//             if (Math.abs(x) >= width) {
+//                 x += width;
+//             }
+//
+//             track.style.transform = `translate3d(${x}px, 0, 0)`;
+//
+//             requestAnimationFrame(animate);
+//         }
+//
+//         window.addEventListener('load', () => {
+//             measure();
+//             animate();
+//         });
+//
+//         window.addEventListener('resize', () => {
+//             measure();
+//         });
 
-        let speed = 3;
-        let x = 0;
-        let width = 0;
-
-        function measure() {
-            const group = track.querySelector('.marquee__content');
-            width = group.offsetWidth;
-        }
-
-        function animate() {
-            x -= speed;
-
-            if (Math.abs(x) >= width) {
-                x += width;
-            }
-
-            track.style.transform = `translate3d(${x}px, 0, 0)`;
-
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('load', () => {
-            measure();
-            animate();
-        });
-
-        window.addEventListener('resize', () => {
-            measure();
-        });
 
 //SLIDER ACCORDION DESKTOP ONLY
         const slides = document.querySelectorAll('.slide-our-direction');
