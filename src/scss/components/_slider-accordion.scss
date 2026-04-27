@@ -30,7 +30,8 @@
       font-weight: 400;
       font-size: 25px;
       line-height: 1.22;
-      height: auto;
+      //height: auto;
+      max-height: 500px;
       transition: .35s;
       max-width: 288px;
       width: 100%;
