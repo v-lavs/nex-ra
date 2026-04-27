@@ -50,10 +50,11 @@
 
   .card__title-exp,
   .part_right > div {
-    min-width: 288px;
+    min-width: 300px;
+    padding-right: 10px;
   }
   .part_right > div {
-    padding-right: 10px;
+
   }
   .card__text {
     font-size: 20px;
@@ -140,7 +141,7 @@
 
     .card__title-exp,
     .part_right > div {
-      min-width: 188px;
+      min-width: 190px;
     }
 
     .card__thumb {
