@@ -69,9 +69,10 @@
     background-color: #D3EAF3;
 
     .part_left {
-      flex: 0 0 50%;
+      flex: 1;
       justify-content: center;
       transition: 0.6s ease;
+      max-width: 50%;
     }
 
     .part_right {
@@ -180,7 +181,7 @@
       padding-right: 0;
       padding-bottom: 32px;
       height: auto;
-
+      max-width: 100%;
       .card__title {
         display: none;
       }

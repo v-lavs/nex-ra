@@ -544,9 +544,10 @@ input[type=text] {
 }
 
 .slide-our-direction.expanded .part_left {
-  flex: 0 0 50%;
+  flex: 1;
   justify-content: center;
   transition: 0.6s ease;
+  max-width: 50%;
 }
 
 .slide-our-direction.expanded .part_right {
@@ -1090,6 +1091,7 @@ input[type=text] {
     padding-right: 0;
     padding-bottom: 32px;
     height: auto;
+    max-width: 100%;
   }
 
   .slide-our-direction .part_left .card__title {
@@ -1395,11 +1397,11 @@ input[type=text] {
   }
 
   .counter__item {
-    padding-bottom: 24px;
+    padding-bottom: 20px;
   }
 
   .card-values__body {
-    padding-top: 24px;
+    padding-top: 20px;
   }
 
   .section-philosophy .section__text {
