@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', closeMenu);
         });
 
-// LOGO HEADER ANIM
+// LOGO HEADER ANIM, SECTION-BANNER ANIM
         const header = document.querySelector('.header');
         const banner = document.querySelector('.section-banner');
         window.addEventListener('load', () => {
@@ -51,12 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             banner.classList.add('loaded');
         });
 
-//SECTION-BANNER ANIM
-
-
-
-
-// parallax
+// parallax SECTION-BANNER
 
         let enableParallax = window.innerWidth > 1024;
         const bg = document.querySelector('.section-banner__bg');

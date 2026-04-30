@@ -1145,6 +1145,10 @@ input[type=text] {
     max-height: 1024px;
   }
 
+  .section-banner__title {
+    margin-bottom: 100px;
+  }
+
   .section-banner .section-banner__bg {
     transform: none;
   }
